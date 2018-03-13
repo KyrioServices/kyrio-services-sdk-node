@@ -1,5 +1,5 @@
-import { KyrioError } from './KyrioError';
-import { ErrorCode } from './ErrorCode';
+import { KyrioError } from '../KyrioError';
+import { ErrorCode } from '../ErrorCode';
 import { Provider } from './Provider';
 
 export class RandomData {

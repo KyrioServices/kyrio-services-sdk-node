@@ -2,8 +2,8 @@ let url = require('url');
 let querystring = require('querystring');
 
 import { KyrioAccount } from '../KyrioAccount';
-import { KyrioError } from './KyrioError';
-import { ErrorCode } from './ErrorCode';
+import { KyrioError } from '../KyrioError';
+import { ErrorCode } from '../ErrorCode';
 
 export class KyrioRestClient {
     protected _account: KyrioAccount;

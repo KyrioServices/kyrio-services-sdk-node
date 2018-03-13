@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var url = require('url');
 var querystring = require('querystring');
-var ErrorCode_1 = require("./ErrorCode");
+var ErrorCode_1 = require("../ErrorCode");
 var KyrioRestClient = /** @class */ (function () {
     function KyrioRestClient(account) {
         if (account == null)

@@ -2,12 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var KyrioAccount_1 = require("./KyrioAccount");
 exports.KyrioAccount = KyrioAccount_1.KyrioAccount;
-var KyrioError_1 = require("./shared/KyrioError");
+var KyrioError_1 = require("./KyrioError");
 exports.KyrioError = KyrioError_1.KyrioError;
-var ErrorCode_1 = require("./shared/ErrorCode");
+var ErrorCode_1 = require("./ErrorCode");
 exports.ErrorCode = ErrorCode_1.ErrorCode;
 var Address_1 = require("./shared/Address");
 exports.Address = Address_1.Address;
+var Provider_1 = require("./shared/Provider");
+exports.Provider = Provider_1.Provider;
 var ServiceabilityClient_1 = require("./serviceability/ServiceabilityClient");
 exports.ServiceabilityClient = ServiceabilityClient_1.ServiceabilityClient;
 var LocationType_1 = require("./serviceability/LocationType");

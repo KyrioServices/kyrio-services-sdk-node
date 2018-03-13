@@ -1,12 +1,12 @@
 import { KyrioAccount } from '../KyrioAccount';
+import { KyrioError } from '../KyrioError';
+import { ErrorCode } from '../ErrorCode';
 
 import { KyrioRestClient } from '../shared/KyrioRestClient';
-import { KyrioError } from '../shared/KyrioError';
 import { Address } from '../shared/Address';
 import { RandomData } from '../shared/RandomData';
 
 import { ServiceabilityResult } from './ServiceabilityResult';
-import { ErrorCode } from '../shared/ErrorCode';
 import { LocationType } from './LocationType';
 import { SiteStatus } from './SiteStatus';
 

@@ -1,5 +1,5 @@
 import { KyrioAccount } from '../KyrioAccount';
-import { KyrioError } from './KyrioError';
+import { KyrioError } from '../KyrioError';
 export declare class KyrioRestClient {
     protected _account: KyrioAccount;
     constructor(account: KyrioAccount);

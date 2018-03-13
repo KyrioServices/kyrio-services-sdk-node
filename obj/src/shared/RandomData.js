@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ErrorCode_1 = require("./ErrorCode");
+var ErrorCode_1 = require("../ErrorCode");
 var RandomData = /** @class */ (function () {
     function RandomData() {
     }

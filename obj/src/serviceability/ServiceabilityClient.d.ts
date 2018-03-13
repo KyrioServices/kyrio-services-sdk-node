@@ -1,6 +1,6 @@
 import { KyrioAccount } from '../KyrioAccount';
+import { KyrioError } from '../KyrioError';
 import { KyrioRestClient } from '../shared/KyrioRestClient';
-import { KyrioError } from '../shared/KyrioError';
 import { Address } from '../shared/Address';
 import { ServiceabilityResult } from './ServiceabilityResult';
 export declare class ServiceabilityClient extends KyrioRestClient {

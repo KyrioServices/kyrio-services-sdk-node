@@ -1,4 +1,4 @@
-import { KyrioError } from './KyrioError';
+import { KyrioError } from '../KyrioError';
 import { Provider } from './Provider';
 export declare class RandomData {
     static PROVIDERS: Provider[];
