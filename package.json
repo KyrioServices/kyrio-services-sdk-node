@@ -1,0 +1,38 @@
+{
+    "name": "kyrio-services-sdk-node",
+    "version": "1.0.0",
+    "author": "Kyrio",
+    "description": "Node.js SDK to Kyrio Online Services",
+    "main": "./obj/src/index.js",
+    "typings": "./obj/src/index.d.ts",
+    "keywords": [
+        "kyrio",
+        "sdk",
+        "cable",
+        "serviceability"
+    ],
+    "noAnalyze": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/KyrioServices/kyrio-services-sdk-node"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.6.14"
+    },
+    "private": false,
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch",
+        "test": "mocha -t 10000 -R spec -u tdd --recursive ./obj/test",
+        "docgen": "typedoc --out doc/api src --mode file --excludeExternals --target ES5 --ignoreCompilerErrors --readme doc/ApiReference.md"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/chai": "*",
+        "@types/mocha": "*",
+        "@types/node": "*",
+        "chai": "*",
+        "mocha": "*"
+    }
+}

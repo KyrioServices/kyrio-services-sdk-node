@@ -1,0 +1,7 @@
+/.vscode
+/src
+/test
+/obj/test
+/data
+/*.sh
+/*.ps1
