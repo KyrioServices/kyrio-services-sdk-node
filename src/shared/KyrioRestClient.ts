@@ -53,7 +53,7 @@ export class KyrioRestClient {
             headers: {
                 'content-type': 'application/json',
                 'content-length': Buffer.byteLength(requestContent),
-                'accepts': 'application/json',
+                'accept': 'application/json',
                 'client-id': this._account.clientId,
                 'enable-test-mock': this._account.enableTestMock,
                 'enable-test-error': this._account.enableTestError
