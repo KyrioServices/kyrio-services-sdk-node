@@ -4,5 +4,5 @@ export class Address {
     public city: string;
     public state: string;
     public postalCode: string;
-    public country: string;
+    public countryCode: string;
 }

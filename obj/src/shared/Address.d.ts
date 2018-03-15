@@ -4,5 +4,5 @@ export declare class Address {
     city: string;
     state: string;
     postalCode: string;
-    country: string;
+    countryCode: string;
 }

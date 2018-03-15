@@ -19,7 +19,7 @@ export class ServiceabilityClient extends KyrioRestClient {
 
     public determineBusinessServiceability(
         addressLine1: string, addressLine2: string, city: string,
-        state: string, postalCode: string, country: string,
+        state: string, postalCode: string, countryCode: string,
         callback: (err: any, results: ServiceabilityResult[]) => void): void {
         let address = <Address>{
             line1: addressLine1,
@@ -27,7 +27,7 @@ export class ServiceabilityClient extends KyrioRestClient {
             city: city,
             state: state,
             postalCode: postalCode,
-            country: country
+            countryCode: countryCode
         };
 
         this.determineBusinessServiceabilityForAddress(address, callback);
@@ -55,7 +55,7 @@ export class ServiceabilityClient extends KyrioRestClient {
             city: address.city,
             state: address.state,
             postal_code: address.postalCode,
-            country: address.country
+            country_code: address.countryCode
         };
 
         // Invoke operation on the server

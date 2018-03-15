@@ -19,14 +19,14 @@ var ServiceabilityClient = /** @class */ (function (_super) {
     function ServiceabilityClient(account) {
         return _super.call(this, account) || this;
     }
-    ServiceabilityClient.prototype.determineBusinessServiceability = function (addressLine1, addressLine2, city, state, postalCode, country, callback) {
+    ServiceabilityClient.prototype.determineBusinessServiceability = function (addressLine1, addressLine2, city, state, postalCode, countryCode, callback) {
         var address = {
             line1: addressLine1,
             line2: addressLine2,
             city: city,
             state: state,
             postalCode: postalCode,
-            country: country
+            countryCode: countryCode
         };
         this.determineBusinessServiceabilityForAddress(address, callback);
     };
@@ -48,7 +48,7 @@ var ServiceabilityClient = /** @class */ (function (_super) {
             city: address.city,
             state: address.state,
             postal_code: address.postalCode,
-            country: address.country
+            country_code: address.countryCode
         };
         // Invoke operation on the server
         _super.prototype.invoke.call(this, 'GET', route, params, null, function (err, response) {
