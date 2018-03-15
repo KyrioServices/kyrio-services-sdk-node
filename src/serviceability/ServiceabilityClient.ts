@@ -10,13 +10,33 @@ import { ServiceabilityResult } from './ServiceabilityResult';
 import { LocationType } from './LocationType';
 import { SiteStatus } from './SiteStatus';
 
+/**
+ * Client to access Kyrio Serviceability API
+ */
 export class ServiceabilityClient extends KyrioRestClient {
     private static readonly BASE_ROUTE = '/api/v1';
 
+    /**
+     * Default client constractor.
+     * @param account a Kyrio account associated with this client.
+     */
     public constructor(account: KyrioAccount) {
         super(account);
     }
 
+	/**
+	 * Determines cable providers that serve location specified by it's postal address.
+	 * The method supports incomplete addresses: addressLine1 and postalCode
+	 * or addressLine1, city and state.
+	 * @param addressLine1 Street number, pre-directional, street name, suffix, post-directional.
+	 * @param addressLine2 Secondary address line such as Apt, Suite or Lot.
+	 * @param city City or town name.
+	 * @param state For US addresses, use the standard 2-character state abbreviation.
+	 * @param postalCode For US addresses, use the 5-digit ZIP code.
+	 * @param countryCode Use ‘US’ to indicate US addresses.  If the argument is omitted, ‘US’ will be assumed. Refer to ISO 3166 Country Code Standardfor non-US addresses.
+	 * @return Array of serviceability results from cable providers.
+	 * @throws KyrioException returned by the server.
+	 */
     public determineBusinessServiceability(
         addressLine1: string, addressLine2: string, city: string,
         state: string, postalCode: string, countryCode: string,
@@ -33,6 +53,12 @@ export class ServiceabilityClient extends KyrioRestClient {
         this.determineBusinessServiceabilityForAddress(address, callback);
     }
 
+    /**
+     * Determines cable providers that serve location specified by it's postal address.
+     * @param address Location postal address.
+     * @return Array of serviceability results from cable providers.
+     * @throws KyrioException returned by the server.
+     */
     public determineBusinessServiceabilityForAddress(
         address: Address,
         callback: (err: KyrioError, results: ServiceabilityResult[]) => void): void {
@@ -84,10 +110,16 @@ export class ServiceabilityClient extends KyrioRestClient {
         });
     }
 
+    /**
+     * Generates random test serviceability response.
+     * @param address Location postal address.
+     * @return Array of serviceability results from cable providers.
+     * @throws KyrioException returned by the server.
+     */
     private mockDetermineBusinessServiceability(address: Address,
         callback: (err: KyrioError, results: ServiceabilityResult[]) => void): void {
         // Simulate random errors
-        if (this._account.enableTestError && RandomData.chance(1, 10)) {
+        if (this._account.enableTestError && RandomData.chance(1, 100)) {
             let err = RandomData.nextError();
             callback(err, null);
             return;

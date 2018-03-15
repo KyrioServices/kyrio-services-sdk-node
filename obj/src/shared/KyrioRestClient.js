@@ -3,12 +3,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var url = require('url');
 var querystring = require('querystring');
 var ErrorCode_1 = require("../ErrorCode");
+/**
+ * Abstract implementation of REST clients to call Kyrio services.
+ */
 var KyrioRestClient = /** @class */ (function () {
+    /**
+     * Constructs this client and sets initial values.
+     * @param account A Kyrio account associated with his client.
+     */
     function KyrioRestClient(account) {
         if (account == null)
             throw new Error("account cannot be null");
         this._account = account;
     }
+    /**
+     * Creates HTTP client and sets default headers for all REST calls.
+     * @return Created HTTP client
+     */
     KyrioRestClient.prototype.createClient = function () {
         var client;
         if (this._account.serverUrl.indexOf('http://') == 0)
@@ -19,11 +30,24 @@ var KyrioRestClient = /** @class */ (function () {
         var protocol = pos > 0 ? this._account.serverUrl.substring(0, pos) : this._account.serverUrl;
         throw new Error('Unsupported protocol ' + protocol);
     };
+    /**
+     * Composes query parameters into encoded string.
+     * @param params Operation query parameters
+     * @return Encoded query parameter string
+     */
     KyrioRestClient.prototype.composeQueryParams = function (params) {
         if (params == null)
             return '';
         return '?' + querystring.stringify(params);
     };
+    /**
+     * Invokes REST operation on the server and handles the response.
+     * @param method Operation method: GET, POST, PUT or DELETE
+     * @param route Operation base route.
+     * @param parameters Operation query parameter.
+     * @param body Value to be sent in request body.
+     * @return Value returned by the server of expected type.
+     */
     KyrioRestClient.prototype.invoke = function (method, route, params, body, callback) {
         if (this._account.clientId == '')
             throw new Error('clientId is not set');

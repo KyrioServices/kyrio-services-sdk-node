@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Cable service provider (also known as MSO)
+ */
 var Provider = /** @class */ (function () {
     function Provider() {
     }

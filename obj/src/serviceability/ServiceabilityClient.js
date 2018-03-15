@@ -14,11 +14,31 @@ var KyrioRestClient_1 = require("../shared/KyrioRestClient");
 var RandomData_1 = require("../shared/RandomData");
 var LocationType_1 = require("./LocationType");
 var SiteStatus_1 = require("./SiteStatus");
+/**
+ * Client to access Kyrio Serviceability API
+ */
 var ServiceabilityClient = /** @class */ (function (_super) {
     __extends(ServiceabilityClient, _super);
+    /**
+     * Default client constractor.
+     * @param account a Kyrio account associated with this client.
+     */
     function ServiceabilityClient(account) {
         return _super.call(this, account) || this;
     }
+    /**
+     * Determines cable providers that serve location specified by it's postal address.
+     * The method supports incomplete addresses: addressLine1 and postalCode
+     * or addressLine1, city and state.
+     * @param addressLine1 Street number, pre-directional, street name, suffix, post-directional.
+     * @param addressLine2 Secondary address line such as Apt, Suite or Lot.
+     * @param city City or town name.
+     * @param state For US addresses, use the standard 2-character state abbreviation.
+     * @param postalCode For US addresses, use the 5-digit ZIP code.
+     * @param countryCode Use ‘US’ to indicate US addresses.  If the argument is omitted, ‘US’ will be assumed. Refer to ISO 3166 Country Code Standardfor non-US addresses.
+     * @return Array of serviceability results from cable providers.
+     * @throws KyrioException returned by the server.
+     */
     ServiceabilityClient.prototype.determineBusinessServiceability = function (addressLine1, addressLine2, city, state, postalCode, countryCode, callback) {
         var address = {
             line1: addressLine1,
@@ -30,6 +50,12 @@ var ServiceabilityClient = /** @class */ (function (_super) {
         };
         this.determineBusinessServiceabilityForAddress(address, callback);
     };
+    /**
+     * Determines cable providers that serve location specified by it's postal address.
+     * @param address Location postal address.
+     * @return Array of serviceability results from cable providers.
+     * @throws KyrioException returned by the server.
+     */
     ServiceabilityClient.prototype.determineBusinessServiceabilityForAddress = function (address, callback) {
         if (address == null)
             throw new Error('address cannot be null');
@@ -74,9 +100,15 @@ var ServiceabilityClient = /** @class */ (function (_super) {
             callback(null, results);
         });
     };
+    /**
+     * Generates random test serviceability response.
+     * @param address Location postal address.
+     * @return Array of serviceability results from cable providers.
+     * @throws KyrioException returned by the server.
+     */
     ServiceabilityClient.prototype.mockDetermineBusinessServiceability = function (address, callback) {
         // Simulate random errors
-        if (this._account.enableTestError && RandomData_1.RandomData.chance(1, 10)) {
+        if (this._account.enableTestError && RandomData_1.RandomData.chance(1, 100)) {
             var err = RandomData_1.RandomData.nextError();
             callback(err, null);
             return;

@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Response from cable provider with service status for requested location.
+ */
 var ServiceabilityResult = /** @class */ (function () {
     function ServiceabilityResult() {
     }

@@ -5,9 +5,19 @@ import { KyrioAccount } from '../KyrioAccount';
 import { KyrioError } from '../KyrioError';
 import { ErrorCode } from '../ErrorCode';
 
-export class KyrioRestClient {
+/**
+ * Abstract implementation of REST clients to call Kyrio services.
+ */
+export abstract class KyrioRestClient {
+	/**
+	 * Kyrio account associated with this client
+	 */
     protected _account: KyrioAccount;
 
+	/**
+	 * Constructs this client and sets initial values.
+	 * @param account A Kyrio account associated with his client.
+	 */
     public constructor(account: KyrioAccount) {
         if (account == null)
             throw new Error("account cannot be null");
@@ -15,6 +25,10 @@ export class KyrioRestClient {
         this._account = account;
     }
 
+    /**
+     * Creates HTTP client and sets default headers for all REST calls.
+     * @return Created HTTP client
+     */
     private createClient(): any {
         let client: any;
         if (this._account.serverUrl.indexOf('http://') == 0)
@@ -27,11 +41,24 @@ export class KyrioRestClient {
         throw new Error('Unsupported protocol ' + protocol);
     }
 
+    /**
+     * Composes query parameters into encoded string.
+     * @param params Operation query parameters
+     * @return Encoded query parameter string
+     */
     private composeQueryParams(params: any) {
         if (params == null) return '';
         return '?' + querystring.stringify(params);
     }
 
+    /**
+     * Invokes REST operation on the server and handles the response.
+     * @param method Operation method: GET, POST, PUT or DELETE
+     * @param route Operation base route.
+     * @param parameters Operation query parameter.
+     * @param body Value to be sent in request body.
+     * @return Value returned by the server of expected type.
+     */
     protected invoke(method: string, route: string, params: any, body: any,
         callback: (err: KyrioError, response: any) => void): void {
         if (this._account.clientId == '')
