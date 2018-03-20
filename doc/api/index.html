@@ -70,9 +70,9 @@
 				<pre><code class="lang-bash">npm install kyrio-ols-sdk-node
 </code></pre>
 				<h2 id="use">Use</h2>
-				<pre><code class="lang-js"><span class="hljs-keyword">var</span> KyrioAccount = <span class="hljs-built_in">require</span>(<span class="hljs-string">'kyrio-ols-sdk-node'</span>);
+				<pre><code class="lang-js"><span class="hljs-keyword">var</span> sdk = <span class="hljs-built_in">require</span>(<span class="hljs-string">'kyrio-services-sdk-node'</span>);
 
-<span class="hljs-keyword">var</span> account = <span class="hljs-keyword">new</span> KyrioAccount();
+<span class="hljs-keyword">var</span> account = <span class="hljs-keyword">new</span> sdk.KyrioAccount();
 account.clientId = <span class="hljs-string">"999999"</span>;
 
 <span class="hljs-keyword">var</span> client = account.createServiceabilityClient();
@@ -88,6 +88,10 @@ client.determineBusinessServiceability(
     }
 );
 </code></pre>
+				<h2 id="references">References</h2>
+				<ul>
+					<li><a href="https://rawgit.com/KyrioServices/kyrio-services-sdk-node/master/doc/api/index.html">API Documentation</a></li>
+				</ul>
 				<h2 id="license">License</h2>
 				<p>This SDK is distributed under MIT license and free to use for all Kyrio clients.</p>
 			</div>

@@ -11,9 +11,9 @@ npm install kyrio-ols-sdk-node
 ## Use
 
 ```js
-var KyrioAccount = require('kyrio-ols-sdk-node');
+var sdk = require('kyrio-services-sdk-node');
 
-var account = new KyrioAccount();
+var account = new sdk.KyrioAccount();
 account.clientId = "999999";
 
 var client = account.createServiceabilityClient();
