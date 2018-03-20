@@ -30,6 +30,10 @@ client.determineBusinessServiceability(
 );
 ```
 
+## References
+
+- [API Documentation](https://rawgit.com/KyrioServices/kyrio-services-sdk-node/master/doc/api/index.html)
+
 ## License
 
 This SDK is distributed under MIT license and free to use for all Kyrio clients.

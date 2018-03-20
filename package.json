@@ -25,7 +25,7 @@
         "build": "tsc",
         "watch": "tsc --watch",
         "test": "mocha -t 10000 -R spec -u tdd --recursive ./obj/test",
-        "docgen": "typedoc --out doc/api src --mode file --excludeExternals --target ES5 --ignoreCompilerErrors --readme doc/ApiReference.md"
+        "docgen": "typedoc --out doc/api src --mode file"
     },
     "dependencies": {},
     "devDependencies": {
