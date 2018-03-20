@@ -5,7 +5,7 @@ This SDK provides full access to Kyrio Online Services public API.
 ## Install
 
 ```bash
-npm install kyrio-ols-sdk-node
+npm install kyrio-services-sdk-node
 ```
 
 ## Use
