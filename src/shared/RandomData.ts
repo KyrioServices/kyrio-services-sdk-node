@@ -10,23 +10,23 @@ export class RandomData {
      * All currently connected cable providers
      */
     public static PROVIDERS: Provider[] = [
-        { id: "1002", name: "Time Warner Cable" },
-        { id: "1005", name: "Comcast" },
-        { id: "1008", name: "Adelphia" },
-        { id: "1010", name: "Cox Communications" },
-        { id: "1011", name: "Charter" },
-        { id: "1012", name: "Insight Communications" },
-        { id: "1014", name: "Mediacom" },
-        { id: "1015", name: "Cablevision" },
-        { id: "1016", name: "Cable One" },
-        { id: "1017", name: "Bright House Networks" },
-        { id: "1018", name: "Suddenlink" },
-        { id: "1024", name: "Massillon Cable" },
-        { id: "1027", name: "Clear Picture, Inc" },
-        { id: "1099", name: "LotsACable" },
-        { id: "1111", name: "Ridge Cable" },
-        { id: "1236", name: "Mythical Cable" },
-        { id: "1237", name: "NewMythical Cable" }
+        { id: "2000", name: "Local Test Cable Provider A" },
+        { id: "2001", name: "Local Test Cable Provider B" },
+        { id: "2002", name: "Local Test Cable Provider C" },
+        { id: "2003", name: "Local Test Cable Provider D" },
+        { id: "2004", name: "Local Test Cable Provider E" },
+        { id: "2005", name: "Local Test Cable Provider F" },
+        { id: "2006", name: "Local Test Cable Provider G" },
+        { id: "2007", name: "Local Test Cable Provider H" },
+        { id: "2008", name: "Local Test Cable Provider I" },
+        { id: "2009", name: "Local Test Cable Provider J" },
+        { id: "2010", name: "Local Test Cable Provider K" },
+        { id: "2011", name: "Local Test Cable Provider L" },
+        { id: "2012", name: "Local Test Cable Provider M" },
+        { id: "2013", name: "Local Test Cable Provider N" },
+        { id: "2014", name: "Local Test Cable Provider O" },
+        { id: "2015", name: "Local Test Cable Provider P" },
+        { id: "2016", name: "Local Test Cable Provider Q" }
     ];
 
     /**
