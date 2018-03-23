@@ -14,7 +14,7 @@ import { SiteStatus } from './SiteStatus';
  * Client to access Kyrio Serviceability API
  */
 export class ServiceabilityClient extends KyrioRestClient {
-    private static readonly BASE_ROUTE = '/api/v1';
+    private static readonly BASE_ROUTE = '/business/api/v1';
 
     /**
      * Default client constractor.

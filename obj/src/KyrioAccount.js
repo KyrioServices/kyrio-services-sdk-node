@@ -9,7 +9,6 @@ var KyrioAccount = /** @class */ (function () {
      * Default account constructor
      */
     function KyrioAccount() {
-        this._serverUrl = 'http://localhost:7277';
         this._enableTestLocal = false;
         this._enableTestMock = false;
         this._enableTestError = false;

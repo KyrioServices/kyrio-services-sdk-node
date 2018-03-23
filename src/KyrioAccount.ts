@@ -11,7 +11,7 @@ export class KyrioAccount {
     private static readonly SERVER_URL_REGEX = /(https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?/gi;
 
     private _clientId: string;
-    private _serverUrl: string = 'http://localhost:7277';
+    private _serverUrl: string;
     private _enableTestLocal: boolean = false;
     private _enableTestMock: boolean = false;
     private _enableTestError: boolean = false;

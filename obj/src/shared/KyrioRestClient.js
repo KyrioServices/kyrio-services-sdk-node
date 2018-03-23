@@ -56,12 +56,14 @@ var KyrioRestClient = /** @class */ (function () {
         if (route == '')
             throw new Error('route cannot be null');
         var client = this.createClient();
-        var responseUri = url.parse(this._account.serverUrl);
+        var requestUri = url.parse(this._account.serverUrl);
         var requestContent = body != null ? JSON.stringify(body) : '';
         var options = {
             method: method,
-            hostname: responseUri.hostname,
-            port: responseUri.port,
+            protocol: requestUri.protocol,
+            hostname: requestUri.hostname,
+            rejectUnauthorized: false,
+            port: requestUri.port,
             path: route + this.composeQueryParams(params),
             headers: {
                 'content-type': 'application/json',
@@ -70,7 +72,8 @@ var KyrioRestClient = /** @class */ (function () {
                 'client-id': this._account.clientId,
                 'enable-test-mock': this._account.enableTestMock,
                 'enable-test-error': this._account.enableTestError
-            }
+            },
+            timeout: 20000
         };
         var request = client.request(options, function (response) {
             var responseContent = '';

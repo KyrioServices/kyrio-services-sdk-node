@@ -69,13 +69,15 @@ export abstract class KyrioRestClient {
             throw new Error('route cannot be null');
 
         let client = this.createClient();
-        let responseUri = url.parse(this._account.serverUrl);
+        let requestUri = url.parse(this._account.serverUrl);
         let requestContent = body != null ? JSON.stringify(body) : '';
 
         let options = {
             method: method,
-            hostname: responseUri.hostname,
-            port: responseUri.port,
+            protocol: requestUri.protocol,
+            hostname: requestUri.hostname,
+            rejectUnauthorized: false,
+            port: requestUri.port,
             path: route + this.composeQueryParams(params),
             headers: {
                 'content-type': 'application/json',
@@ -84,12 +86,12 @@ export abstract class KyrioRestClient {
                 'client-id': this._account.clientId,
                 'enable-test-mock': this._account.enableTestMock,
                 'enable-test-error': this._account.enableTestError
-            }
+            },
+            timeout: 20000
         };
 
         let request = client.request(options, (response) => {
             let responseContent = '';
-
             response.setEncoding('utf8');
 
             response.on('data', (chunk) => {

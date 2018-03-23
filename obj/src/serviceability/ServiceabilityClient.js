@@ -135,7 +135,7 @@ var ServiceabilityClient = /** @class */ (function (_super) {
             callback(null, results);
         }, 1500);
     };
-    ServiceabilityClient.BASE_ROUTE = '/api/v1';
+    ServiceabilityClient.BASE_ROUTE = '/business/api/v1';
     return ServiceabilityClient;
 }(KyrioRestClient_1.KyrioRestClient));
 exports.ServiceabilityClient = ServiceabilityClient;

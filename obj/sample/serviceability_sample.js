@@ -1,4 +1,4 @@
-//var sdk = require('kyrio-ols-sdk-node');
+//var sdk = require('kyrio-services-sdk-node');
 var sdk = require('../src/index');
 var account = new sdk.KyrioAccount();
 account.clientId = "999999";

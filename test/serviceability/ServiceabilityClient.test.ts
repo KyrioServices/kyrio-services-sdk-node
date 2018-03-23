@@ -26,6 +26,7 @@ suite('ServiceabilityClient', () => {
         account.clientId = '999999';
         account.enableTestMock = true;
         account.enableTestError = false;
+        account.enableQaEnvironment = true;
 
         let client = account.createServiceabilityClient();
         client.determineBusinessServiceability(
