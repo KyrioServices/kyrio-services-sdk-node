@@ -1,6 +1,6 @@
 {
     "name": "kyrio-services-sdk-node",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Kyrio",
     "description": "Node.js SDK to Kyrio Online Services",
     "main": "./obj/src/index.js",
