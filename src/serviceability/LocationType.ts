@@ -3,11 +3,6 @@
  */
 export enum LocationType
 {
-	/**
-	 * Location does not exist or not listed
-	 */
-    None = "none",
-
     /**
      * Location type is unknown
      */

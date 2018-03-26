@@ -15,7 +15,7 @@ You can download them from official Node.js website: https://nodejs.org/en/downl
 
 After node is installed you can check it by running the following command:
 ```bash
-node -version
+node --version
 ```
 
 Then you need to configure node tools:
@@ -77,7 +77,7 @@ tsc --watch
 
 To build sourcecode documentation execute:
 ```bash
-npm docgen
+npm run docgen
 ```
 
 ## <a name="test"></a> Testing
