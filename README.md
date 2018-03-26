@@ -33,6 +33,7 @@ client.determineBusinessServiceability(
 ## References
 
 - [API Documentation](https://rawgit.com/KyrioServices/kyrio-services-sdk-node/master/doc/api/index.html)
+- [Development Guide](https://github.com/KyrioServices/kyrio-services-sdk-node/blob/master/doc/Development.md)
 
 ## License
 
