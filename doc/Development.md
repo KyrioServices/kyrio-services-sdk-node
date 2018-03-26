@@ -89,8 +89,13 @@ npm test
 
 ## <a name="release"></a> Release
 
-Formal release process consistents of few steps. 
-First of all it is required to tag guthub repository with a version number:
+The formal release process consistents of few steps.
+
+### Version the package
+- Update the version value in the package.json file
+- Update the CHANGELOG.md file to reflect the changes
+
+You are required to tag the guthub repository with the version number in the package:
 
 ```bash
 git tag vx.y.y
