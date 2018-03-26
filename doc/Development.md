@@ -7,7 +7,6 @@ This document provides high-level instructions on how to build, test and release
 * [Building](#build)
 * [Testing](#test)
 * [Release](#release)
-* [Contributing](#contrib) 
 
 ## <a name="setup"></a> Environment Setup
 
