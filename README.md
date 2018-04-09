@@ -1,3 +1,5 @@
+See [KyrioService](https://github.com/KyrioServices/KyrioServices) for a language-agnostic description of the API
+
 # Node.js SDK to Kyrio Services
 
 This SDK provides full access to Kyrio Services public API.
